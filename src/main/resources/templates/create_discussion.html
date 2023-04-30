@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/auth/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/auth/css/style.css">
+</head>
+<body>
+<div class="main">
+    <section class="make_discussion">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">Создание Вопроса</h2>
+                    <form action="#" method="POST" class="make_discussion-form" id="make_discussion-form" th:action="@{/create_discussion}" th:object="${discussionFormData}">
+                        <div class="form-group">
+                            <label for="nickName"></label>
+                            <input type="text" name="nickName" id="nickName" placeholder="Имя"/>
+<!--                            <small class="text-danger" th:if="${#fields.hasErrors('nickName')}" th:errors="*{nickName}"></small>-->
+                        </div>
+
+                        <div class="form-group">
+                            <label for="title"></label>
+                            <input type="text" name="title" id="title" placeholder="Заголовок"/>
+                            <!--                            <small class="text-danger" th:if="${#fields.hasErrors('nickName')}" th:errors="*{nickName}"></small>-->
+                        </div>
+
+                        <div class="form-group">
+                            <label for="category"></label>
+                            <input type="text" name="category" id="category" placeholder="Категория"/>
+                            <!--                            <small class="text-danger" th:if="${#fields.hasErrors('nickName')}" th:errors="*{nickName}"></small>-->
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="question"></label>
+                            <input type="text" name="question" id="question" placeholder="Вопрос"/>
+                            <!--                            <small class="text-danger" th:if="${#fields.hasErrors('nickName')}" th:errors="*{nickName}"></small>-->
+                        </div>
+
+                        <div class="form-group form-button">
+                            <input type="submit" name="create_discussion" id="create_discussion" class="form-submit" value="Отправить вопрос"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script src="/auth/vendor/jquery/jquery.min.js"></script>
+</body>
+</html>

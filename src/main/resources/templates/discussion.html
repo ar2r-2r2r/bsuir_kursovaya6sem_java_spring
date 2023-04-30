@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout/layout">
+
+<head>
+</head>
+
+<body>
+
+<!-- ============================================================== -->
+<!-- Container fluid  -->
+<!-- ============================================================== -->
+<div class="container-fluid" layout:fragment="content">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="row page-titles">
+        <div class="col-md-5 col-8 align-self-center">
+            <h3 class="text-themecolor">Вопрос</h3>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="../dashboard">На главную</a></li>
+                <li class="breadcrumb-item active">Вопрос</li>
+            </ol>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <!-- Row -->
+
+    <!-- Row -->
+    <!-- Row -->
+    <div class="row">
+        <!-- Column -->
+
+        <div class="col-md-12">
+            <h2>Заголовок:  <span class="text-themecolor" th:text=${discussion.title}></span></h2>
+            <h4>Автор:  <span class="text-themecolor" th:text=${discussion.nickName}></span></h4>
+            <h4>Категория :  <span class="text-themecolor" th:text=${discussion.category}></span></h4>
+            <br>
+            <h2>Вопрос :  <span class="text-themecolor" th:text=${discussion.question}></span></h2>
+
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+</div>
+</body>
+
+</html>
