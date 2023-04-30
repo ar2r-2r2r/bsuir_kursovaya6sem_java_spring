@@ -18,7 +18,6 @@ public class UserMapper {
                 .setEmail(user.getEmail())
                 .setFirstName(user.getFirstName())
                 .setLastName(user.getLastName())
-                .setMobileNumber(user.getMobileNumber())
                 .setRoles(new HashSet<RoleDto>(user
                         .getRoles()
                         .stream()

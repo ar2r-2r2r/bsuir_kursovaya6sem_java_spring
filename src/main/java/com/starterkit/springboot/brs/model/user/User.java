@@ -33,7 +33,6 @@ public class User {
 
     private String lastName;
 
-    private String mobileNumber;
 
     @DBRef
     private Set<Role> roles;

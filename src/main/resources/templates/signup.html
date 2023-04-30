@@ -49,23 +49,7 @@
                             <small class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small>
                         </div>
 
-                        <div class="form-group">
-                            <label for="agencyName"><i class="zmdi zmdi-layers"></i></label>
-                            <input type="text" th:field="*{agencyName}" name="agencyName" id="agencyName" placeholder="Agency Name"/>
-                            <small class="text-danger" th:if="${#fields.hasErrors('agencyName')}" th:errors="*{agencyName}"></small>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="agencyDetails"><i class="zmdi zmdi-assignment"></i></label>
-                            <input type="text" th:field="*{agencyDetails}" name="agencyDetails" id="agencyDetails" placeholder="Agency Details"/>
-                            <small class="text-danger" th:if="${#fields.hasErrors('agencyDetails')}" th:errors="*{agencyDetails}"></small>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="mobileNumber"><i class="zmdi zmdi-phone"></i></label>
-                            <input type="text" th:field="*{mobileNumber}" name="mobileNumber" id="mobileNumber" placeholder="Номер телефона"/>
-                            <small class="text-danger" th:if="${#fields.hasErrors('mobileNumber')}" th:errors="*{mobileNumber}"></small>
-                        </div>
 
                         <div class="form-group form-button">
                             <input type="submit" name="signup" id="signup" class="form-submit" value="Регистрация"/>

@@ -52,8 +52,7 @@ public class DashboardController {
         UserDto userDto = userService.findUserByEmail(auth.getName());
         ProfileFormCommand profileFormCommand = new ProfileFormCommand()
                 .setFirstName(userDto.getFirstName())
-                .setLastName(userDto.getLastName())
-                .setMobileNumber(userDto.getMobileNumber());
+                .setLastName(userDto.getLastName());
         PasswordFormCommand passwordFormCommand = new PasswordFormCommand()
                 .setEmail(userDto.getEmail())
                 .setPassword(userDto.getPassword());
@@ -75,8 +74,7 @@ public class DashboardController {
         modelAndView.addObject("userName", userDto.getFullName());
         if (!bindingResult.hasErrors()) {
             userDto.setFirstName(profileFormCommand.getFirstName())
-                    .setLastName(profileFormCommand.getLastName())
-                    .setMobileNumber(profileFormCommand.getMobileNumber());
+                    .setLastName(profileFormCommand.getLastName());
             userService.updateProfile(userDto);
             modelAndView.addObject("userName", userDto.getFullName());
         }
@@ -91,8 +89,7 @@ public class DashboardController {
             ModelAndView modelAndView = new ModelAndView("profile");
             ProfileFormCommand profileFormCommand = new ProfileFormCommand()
                     .setFirstName(userDto.getFirstName())
-                    .setLastName(userDto.getLastName())
-                    .setMobileNumber(userDto.getMobileNumber());
+                    .setLastName(userDto.getLastName());
             modelAndView.addObject("profileForm", profileFormCommand);
             modelAndView.addObject("userName", userDto.getFullName());
             return modelAndView;

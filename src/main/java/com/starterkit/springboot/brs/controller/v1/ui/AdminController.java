@@ -73,7 +73,6 @@ public class AdminController {
                 .setPassword(adminSignupRequest.getPassword())
                 .setFirstName(adminSignupRequest.getFirstName())
                 .setLastName(adminSignupRequest.getLastName())
-                .setMobileNumber(adminSignupRequest.getMobileNumber())
                 .setAdmin(true);
         UserDto admin = userService.signup(userDto); //register the admin
 

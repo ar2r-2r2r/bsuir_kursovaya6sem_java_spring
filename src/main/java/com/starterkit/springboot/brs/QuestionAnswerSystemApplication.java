@@ -47,7 +47,6 @@ public class QuestionAnswerSystemApplication {
                         .setPassword("$2a$10$7PtcjEnWb/ZkgyXyxY1/Iei2dGgGQUbqIIll/dt.qJ8l8nQBWMbYO") // "123456"
                         .setFirstName("John")
                         .setLastName("Doe")
-                        .setMobileNumber("9425094250")
                         .setRoles(new HashSet<>(Arrays.asList(adminRole)));
                 userRepository.save(admin);
             }

@@ -25,15 +25,5 @@ public class AdminSignupFormCommand {
     @NotBlank
     private String lastName;
 
-    @NotBlank
-    @Size(min = 5, max = 100)
-    private String agencyName;
 
-    @NotBlank
-    @Size(max = 100)
-    private String agencyDetails;
-
-    @NotBlank
-    @Size(min = 5, max = 13)
-    private String mobileNumber;
 }

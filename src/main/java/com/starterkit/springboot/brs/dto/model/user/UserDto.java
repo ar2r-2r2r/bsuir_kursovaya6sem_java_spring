@@ -23,7 +23,6 @@ public class UserDto {
     private String password;
     private String firstName;
     private String lastName;
-    private String mobileNumber;
     private boolean isAdmin;
     private Set<RoleDto> roles;
 

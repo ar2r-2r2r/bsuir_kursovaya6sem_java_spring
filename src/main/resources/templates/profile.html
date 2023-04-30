@@ -32,25 +32,6 @@
     <!-- Row -->
     <div class="row">
         <!-- Column -->
-        <div class="col-lg-4 col-xlg-3 col-md-5">
-            <div class="card">
-                <div class="card-block">
-<!--                    <center class="m-t-30"><img src="/dashboard/assets/images/users/5.jpg" class="img-circle"-->
-<!--                                                width="150"/>-->
-                        <h4 class="card-title m-t-10" th:inline="text">[[${name}]]</h4>
-                        <h6 class="card-subtitle">Agency Admin</h6>
-                        <div class="row text-center justify-content-md-center">
-                            <div class="col-4"><a href="javascript:void(0)" class="link"><i class="icon-people"></i>
-                                <font class="font-medium">254</font></a></div>
-                            <div class="col-4"><a href="javascript:void(0)" class="link"><i class="icon-picture"></i>
-                                <font class="font-medium">54</font></a></div>
-                        </div>
-<!--                    </center>-->
-                </div>
-            </div>
-        </div>
-        <!-- Column -->
-        <!-- Column -->
         <div class="col-lg-4 col-xlg-3 col-md-7">
             <div class="card">
                 <div class="card-block">
@@ -68,13 +49,6 @@
                                 <input type="text" required th:field="*{lastName}" class="form-control form-control-line" name="lastName" id="lastName">
                             </div>
                             <small class="text-danger-padded" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></small>
-                        </div>
-                        <div class="form-group">
-                            <label for="mobileNumber" class="col-md-12">Телефонный номер</label>
-                            <div class="col-md-12">
-                                <input type="text" required th:field="*{mobileNumber}" class="form-control form-control-line" name="mobileNumber" id="mobileNumber">
-                            </div>
-                            <small class="text-danger-padded" th:if="${#fields.hasErrors('mobileNumber')}" th:errors="*{mobileNumber}"></small>
                         </div>
                         <div class="form-group">
                             <div class="col-sm-12">

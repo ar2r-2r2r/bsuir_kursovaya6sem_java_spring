@@ -44,7 +44,6 @@ public class UserController {
                 .setPassword(userSignupRequest.getPassword())
                 .setFirstName(userSignupRequest.getFirstName())
                 .setLastName(userSignupRequest.getLastName())
-                .setMobileNumber(userSignupRequest.getMobileNumber())
                 .setAdmin(isAdmin);
 
         return userService.signup(userDto);

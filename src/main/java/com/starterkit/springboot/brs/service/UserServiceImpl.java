@@ -54,8 +54,7 @@ public class UserServiceImpl implements UserService {
                     .setPassword(bCryptPasswordEncoder.encode(userDto.getPassword()))
                     .setRoles(new HashSet<>(Arrays.asList(userRole)))
                     .setFirstName(userDto.getFirstName())
-                    .setLastName(userDto.getLastName())
-                    .setMobileNumber(userDto.getMobileNumber());
+                    .setLastName(userDto.getLastName());
             return UserMapper.toUserDto(userRepository.save(user));
         }
         throw exception(USER, DUPLICATE_ENTITY, userDto.getEmail());
@@ -87,8 +86,7 @@ public class UserServiceImpl implements UserService {
         if (user.isPresent()) {
             User userModel = user.get();
             userModel.setFirstName(userDto.getFirstName())
-                    .setLastName(userDto.getLastName())
-                    .setMobileNumber(userDto.getMobileNumber());
+                    .setLastName(userDto.getLastName());
             return UserMapper.toUserDto(userRepository.save(userModel));
         }
         throw exception(USER, ENTITY_NOT_FOUND, userDto.getEmail());
