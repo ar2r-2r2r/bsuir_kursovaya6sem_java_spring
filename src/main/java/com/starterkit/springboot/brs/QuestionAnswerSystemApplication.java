@@ -40,13 +40,13 @@ public class QuestionAnswerSystemApplication {
             }
 
             //Create an Admin user
-            User admin = userRepository.findByEmail("admin.agencya@gmail.com");
+            User admin = userRepository.findByEmail("admin.aaaa@gmail.com");
             if (admin == null) {
                 admin = new User()
-                        .setEmail("admin.agencya@gmail.com")
+                        .setEmail("admin.aaaa@gmail.com")
                         .setPassword("$2a$10$7PtcjEnWb/ZkgyXyxY1/Iei2dGgGQUbqIIll/dt.qJ8l8nQBWMbYO") // "123456"
-                        .setFirstName("John")
-                        .setLastName("Doe")
+                        .setFirstName("Art")
+                        .setLastName("Ch")
                         .setRoles(new HashSet<>(Arrays.asList(adminRole)));
                 userRepository.save(admin);
             }
