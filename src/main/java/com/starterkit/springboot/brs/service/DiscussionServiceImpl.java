@@ -44,8 +44,6 @@ public class DiscussionServiceImpl implements DiscussionService{
         if (discussion.isPresent()) {
             return DiscussionMapper.toDiscussionDto(discussion.get());
         }
-//        throw exception(TRIP, ENTITY_NOT_FOUND, tripID);
-//        throw exception(TRIP, ENTITY_NOT_FOUND, tripID);
         return null;
     }
 }

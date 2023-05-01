@@ -2,14 +2,11 @@ package com.starterkit.springboot.brs.dto.model.discussion;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.starterkit.springboot.brs.dto.model.user.RoleDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import lombok.experimental.Accessors;
-
-import java.util.Set;
 
 @Getter
 @Setter
@@ -18,10 +15,7 @@ import java.util.Set;
 @ToString
 @JsonInclude(value = JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class DiscussionDto {
-    private String nickName;
-    private String title;
-    private String category;
-    private String question;
-    private Set<AnswerDto> answers;
+public class AnswerDto {
+    private String answer;
+    private String question_id;
 }
