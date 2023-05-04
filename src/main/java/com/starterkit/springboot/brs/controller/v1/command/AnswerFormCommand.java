@@ -10,7 +10,7 @@ import javax.validation.constraints.Size;
 @Accessors(chain = true)
 public class AnswerFormCommand {
     @NotBlank
-    private String question_id;
+    private String qid;
 
     @NotBlank
     @Size(min = 2)

@@ -2,6 +2,7 @@ package com.starterkit.springboot.brs;
 
 import com.starterkit.springboot.brs.model.user.Role;
 import com.starterkit.springboot.brs.model.user.User;
+import com.starterkit.springboot.brs.repository.discussion.AnswerRepository;
 import com.starterkit.springboot.brs.repository.discussion.DiscussionRepository;
 import com.starterkit.springboot.brs.repository.user.RoleRepository;
 import com.starterkit.springboot.brs.repository.user.UserRepository;
@@ -22,7 +23,7 @@ public class QuestionAnswerSystemApplication {
 
     @Bean
     CommandLineRunner init(RoleRepository roleRepository, UserRepository userRepository,
-                           DiscussionRepository discussionRepository) {
+                           DiscussionRepository discussionRepository, AnswerRepository answerRepository) {
         return args -> {
             //Create Admin and CLIENT Roles
             Role adminRole = roleRepository.findByRole("ADMIN");

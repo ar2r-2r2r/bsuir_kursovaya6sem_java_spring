@@ -61,7 +61,7 @@ public class DiscussionController {
 
     @PostMapping(value = "/create_answer")
     public ModelAndView createNewAnswer(@Valid @ModelAttribute("answerFormData") AnswerFormCommand answerFormCommand, BindingResult bindingResult) {
-        ModelAndView modelAndView = new ModelAndView("create_discussion");
+        ModelAndView modelAndView = new ModelAndView("dashboard");
         if (bindingResult.hasErrors()) {
             return modelAndView;
         } else {
@@ -78,7 +78,9 @@ public class DiscussionController {
     @GetMapping(value="/discussion/{id}")
     public ModelAndView discussionInfo(@PathVariable String id, Model model){
         ModelAndView modelAndView=new ModelAndView("discussion");
+        modelAndView.addObject("answerFormData", new AnswerFormCommand());
         modelAndView.addObject("discussion", discussionService.getDiscussionById(id));
+        modelAndView.addObject("answers", discussionService.getAnswersByQuestionId(id));
 
         return modelAndView;
     }
@@ -92,15 +94,15 @@ public class DiscussionController {
                 .setTitle(discussionFormRequest.getTitle())
                 .setCategory(discussionFormRequest.getCategory())
                 .setQuestion(discussionFormRequest.getQuestion());
-        DiscussionDto discussion = discussionService.create(discussionDto); //register the admin
+        DiscussionDto discussion = discussionService.create(discussionDto);
         return discussion;
     }
 
     private AnswerDto create_answer(@Valid AnswerFormCommand answerFormRequest) {
         AnswerDto answerDto = new AnswerDto()
-                .setQuestion_id(answerFormRequest.getQuestion_id())
+                .setQid(answerFormRequest.getQid())
                 .setAnswer(answerFormRequest.getAnswer());
-        AnswerDto answer = answerService.create(answerDto); //register the admin
+        AnswerDto answer = answerService.create(answerDto);
         return answer;
     }
 

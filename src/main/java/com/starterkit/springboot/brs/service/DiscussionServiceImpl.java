@@ -1,8 +1,11 @@
 package com.starterkit.springboot.brs.service;
 
 import com.starterkit.springboot.brs.dto.mapper.DiscussionMapper;
+import com.starterkit.springboot.brs.dto.model.discussion.AnswerDto;
 import com.starterkit.springboot.brs.dto.model.discussion.DiscussionDto;
+import com.starterkit.springboot.brs.model.discussion.Answer;
 import com.starterkit.springboot.brs.model.discussion.Discussion;
+import com.starterkit.springboot.brs.repository.discussion.AnswerRepository;
 import com.starterkit.springboot.brs.repository.discussion.DiscussionRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +21,9 @@ public class DiscussionServiceImpl implements DiscussionService{
 
     @Autowired
     private DiscussionRepository discussionRepository;
+
+    @Autowired
+    private AnswerRepository answerRepository;
 
     @Autowired
     private ModelMapper modelMapper;
@@ -45,5 +51,13 @@ public class DiscussionServiceImpl implements DiscussionService{
             return DiscussionMapper.toDiscussionDto(discussion.get());
         }
         return null;
+    }
+
+    @Override
+    public List<Answer> getAnswersByQuestionId(String id){
+         List<Answer> answer = answerRepository.findAnswersByQid(id);
+        return answer;
+
+
     }
 }

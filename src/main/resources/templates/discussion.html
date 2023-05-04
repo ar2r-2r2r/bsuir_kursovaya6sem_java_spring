@@ -35,19 +35,43 @@
     <!-- Row -->
     <div class="row">
         <!-- Column -->
-
         <div class="col-md-12">
             <h2>Заголовок:  <span class="text-themecolor" th:text=${discussion.title}></span></h2>
             <h4>Автор:  <span class="text-themecolor" th:text=${discussion.nickName}></span></h4>
             <h4>Категория :  <span class="text-themecolor" th:text=${discussion.category}></span></h4>
             <br>
             <h2>Вопрос :  <span class="text-themecolor" th:text=${discussion.question}></span></h2>
+        </div>
+        <hr>
 
+    </div>
+    <br><br><br>
+    <div class="row">
+        <div class="col-md-12">
+            <form action="#" method="POST" class="make_answer-form" id="make_answer-form" th:action="@{/create_answer}" th:object="${answerFormData}">
+                <div class="form-group">
+                    <label for="answer"></label>
+                    <input type="text" name="answer" id="answer" placeholder="Ответ"/>
+                </div>
+                <input type="text" name="qid" id="qid" hidden th:value=${id} />
+                <div class="form-group form-button">
+                    <input type="submit" name="create_discussion" id="create_discussion" class="btn btn-info " value="Добавить ответ"/>
+                </div>
+            </form>
         </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- End PAge Content -->
-    <!-- ============================================================== -->
+
+    <div:block th:each="answer,iterationStatus : ${answers}" class="tab-pane active" id="home" role="tabpanel">
+        <div class="card-block border border-primary rounded ">
+            <div class="card">
+                <div class="card-header">
+                    <span class="text-themecolor" th:text=${answer.answer}></span>
+                </div>
+            </div>
+        </div>
+
+    </div:block>
+
 </div>
 </body>
 

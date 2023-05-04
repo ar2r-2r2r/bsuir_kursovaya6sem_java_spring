@@ -24,6 +24,6 @@ public class Discussion {
     private String category;
     private String question;
 
-    @DBRef
-    private Set<Answer> answers;
+//    @DBRef
+//    private Set<Answer> answers;
 }

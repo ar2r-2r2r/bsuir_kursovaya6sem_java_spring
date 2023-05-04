@@ -19,6 +19,7 @@ import java.util.Set;
 @JsonInclude(value = JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class DiscussionDto {
+    private String id;
     private String nickName;
     private String title;
     private String category;

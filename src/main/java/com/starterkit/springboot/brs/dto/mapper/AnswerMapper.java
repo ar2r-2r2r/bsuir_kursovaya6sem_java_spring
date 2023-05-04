@@ -15,6 +15,6 @@ public class AnswerMapper {
     public static AnswerDto toAnswerDto(Answer answer){
         return new AnswerDto()
                 .setAnswer(answer.getAnswer())
-                .setQuestion_id(answer.getQuestion_id());
+                .setQid(answer.getQid());
     }
 }

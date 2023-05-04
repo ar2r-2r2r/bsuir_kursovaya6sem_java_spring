@@ -18,11 +18,6 @@ public class DiscussionMapper {
                 .setTitle(discussion.getTitle())
                 .setCategory(discussion.getCategory())
                 .setNickName(discussion.getNickName())
-                .setQuestion(discussion.getQuestion())
-                .setAnswers(new HashSet<AnswerDto>(discussion
-                        .getAnswers()
-                        .stream()
-                        .map(role -> new ModelMapper().map(role, AnswerDto.class))
-                        .collect(Collectors.toSet())));
+                .setQuestion(discussion.getQuestion());
     }
 }

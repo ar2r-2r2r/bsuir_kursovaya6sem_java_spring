@@ -24,7 +24,7 @@ public class AnswerServiceImpl implements AnswerService {
     public AnswerDto create(AnswerDto answerDto) {
         Answer answer=new Answer()
                 .setAnswer(answerDto.getAnswer())
-                .setQuestion_id(answerDto.getQuestion_id());
+                .setQid(answerDto.getQid());
         return AnswerMapper.toAnswerDto(answerRepository.save(answer));
     }
 

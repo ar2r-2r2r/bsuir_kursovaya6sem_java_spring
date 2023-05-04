@@ -9,6 +9,8 @@ import org.springframework.data.mongodb.core.index.IndexDirection;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.Column;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -21,5 +23,6 @@ public class Answer {
     @Indexed(unique = true, direction = IndexDirection.DESCENDING)
     private String answer;
 
-    private String question_id;
+    @Column(name = "qid")
+    private String qid;
 }

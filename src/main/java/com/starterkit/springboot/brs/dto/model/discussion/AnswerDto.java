@@ -17,5 +17,5 @@ import lombok.experimental.Accessors;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class AnswerDto {
     private String answer;
-    private String question_id;
+    private String qid;
 }
