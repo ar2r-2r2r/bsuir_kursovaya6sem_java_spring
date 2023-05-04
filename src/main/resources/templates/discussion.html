@@ -18,7 +18,7 @@
         <div class="col-md-5 col-8 align-self-center">
             <h3 class="text-themecolor">Вопрос</h3>
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="../dashboard">На главную</a></li>
+                <li class="breadcrumb-item"><a href="/dashboard">На главную</a></li>
                 <li class="breadcrumb-item active">Вопрос</li>
             </ol>
         </div>
@@ -51,7 +51,7 @@
             <form action="#" method="POST" class="make_answer-form" id="make_answer-form" th:action="@{/create_answer}" th:object="${answerFormData}">
                 <div class="form-group">
                     <label for="answer"></label>
-                    <input type="text" name="answer" id="answer" placeholder="Ответ"/>
+                    <input type="text" name="answer" id="answer" placeholder="Ответ"  />
                 </div>
                 <input type="text" name="qid" id="qid" hidden th:value=${id} />
                 <div class="form-group form-button">

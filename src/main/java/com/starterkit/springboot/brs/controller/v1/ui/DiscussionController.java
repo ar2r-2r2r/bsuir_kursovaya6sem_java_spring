@@ -6,6 +6,7 @@ import com.starterkit.springboot.brs.controller.v1.command.DiscussionFormCommand
 import com.starterkit.springboot.brs.dto.model.discussion.AnswerDto;
 import com.starterkit.springboot.brs.dto.model.discussion.DiscussionDto;
 import com.starterkit.springboot.brs.dto.model.user.UserDto;
+import com.starterkit.springboot.brs.model.discussion.Discussion;
 import com.starterkit.springboot.brs.service.AnswerService;
 import com.starterkit.springboot.brs.service.DiscussionService;
 import com.starterkit.springboot.brs.service.UserService;
@@ -22,6 +23,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 public class DiscussionController {
@@ -56,7 +58,14 @@ public class DiscussionController {
                 return modelAndView;
             }
         }
-        return new ModelAndView("dashboard");
+        modelAndView = new ModelAndView("dashboard");
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        UserDto userDto = userService.findUserByEmail(auth.getName());
+        List<Discussion> discussions = discussionService.getAllDiscussions();
+        modelAndView.addObject("discussions", discussions);
+        modelAndView.addObject("currentUser", userDto);
+        modelAndView.addObject("userName", userDto.getFullName());
+        return modelAndView;
     }
 
     @PostMapping(value = "/create_answer")
@@ -72,7 +81,14 @@ public class DiscussionController {
                 return modelAndView;
             }
         }
-        return new ModelAndView("dashboard");
+        modelAndView = new ModelAndView("dashboard");
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        UserDto userDto = userService.findUserByEmail(auth.getName());
+        List<Discussion> discussions = discussionService.getAllDiscussions();
+        modelAndView.addObject("discussions", discussions);
+        modelAndView.addObject("currentUser", userDto);
+        modelAndView.addObject("userName", userDto.getFullName());
+        return modelAndView;
     }
 
     @GetMapping(value="/discussion/{id}")
